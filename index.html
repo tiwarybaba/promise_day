@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Promise Day</title>
+    <style>
+        body {
+            background-color: #FFC0CB;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+        h1 {
+            margin-top: 20vh;
+            font-size: 2.5em;
+            color: #D63384;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #ff4d6d;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        button:hover {
+            background-color: #e63950;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #ff9999;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 1.5em;
+            font-weight: bold;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+            color: #D63384;
+        }
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 24px;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Promise Day Baby, I Love You So Much❤️</h1>
+    <button onclick="startEffect()">Promise?</button>
+    <div id="popup" class="popup">I PROMISE TO MAKE YOU MY WIFE AND GROW OLD TOGETHER❤️</div>
+
+    <script>
+        function startEffect() {
+            document.getElementById("popup").style.display = "block";
+            setInterval(() => {
+                let heart = document.createElement("div");
+                heart.innerHTML = "❤️";
+                heart.className = "heart";
+                heart.style.left = Math.random() * window.innerWidth + "px";
+                heart.style.top = "-20px";
+                heart.style.fontSize = Math.random() * 20 + 20 + "px";
+                heart.style.animationDuration = Math.random() * 2 + 2 + "s";
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 5000);
+            }, 300);
+        }
+    </script>
+</body>
+</html>
